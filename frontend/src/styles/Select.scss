@@ -44,7 +44,7 @@
         svg {
             height: 32px;
             width: 32px;
-            color: #9da3aa;
+            color: #e2a82b;
         }
         margin-right: 10px;
         box-shadow: none;
@@ -53,7 +53,7 @@
 
     .react-dropdown-select-dropdown {
         border: none;
-        border: 1px solid #c6c6c6;
+        border: 1px solid #e2a82b;
         border-radius: 9px;
         outline: none;
         :hover {
@@ -67,7 +67,7 @@
         font-weight: 400;
         padding: 10px 0px 10px 25px;
         font-size: 16px;
-        color: #343434; // non selected in dropdown
+        color: #ff0000; // non selected in dropdown
         border-bottom: 1px inside solid #343434;
         :last-child {
             border: none;
@@ -76,8 +76,8 @@
     .react-dropdown-select-item.react-dropdown-select-item-selected,
     .react-dropdown-select-item.react-dropdown-select-item-active {
         background: #111; // selected in dropdown
-        border-bottom: 1px inside solid #343434;
-        color: #fff;
+        border-bottom: 1px inside solid #26ff00;
+        color: #ffff00;
         font-weight: bold;
         :last-child {
             border: none;

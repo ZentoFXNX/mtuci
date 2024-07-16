@@ -1,18 +1,17 @@
-const swaggerAutogen = require('swagger-autogen')()
-const dotenv = require('dotenv');
+const swaggerAutogen = (require('swagger-autogen'))();
+const { config } = require('dotenv');
 
-dotenv.config();
+config();
 
-const doc = {
-  info: {
-    title: 'My API',
-    description: 'Description',
-  },
-  host: `localhost:${process.env.PORT}/api`,
-  schemes: ['http'],
-};
+const documentation = {};
+documentation.info = {};
+documentation.info.title = 'My API';
+documentation.info.description = 'Description';
+documentation.host = ['localhost', process.env.PORT, 'api'].reduce((acc, val) => acc.replace('api', '') + val + (val === 'api' ? '' : ':'), '');
+documentation.schemes = [];
+documentation.schemes.push('http');
 
-const outputFile = './swagger.json'
-const endpointsFiles = ['./routes/Api.js']
+const outputFile = './swagger.json';
+const endpointsFiles = './routes/Api.js';
 
-swaggerAutogen(outputFile, endpointsFiles, doc);
+swaggerAutogen(outputFile, [endpointsFiles], documentation);
